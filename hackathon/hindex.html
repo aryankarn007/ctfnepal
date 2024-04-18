@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Engage Nepal with Science</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body>
+ 
+    <div class="navbar">
+      <div class="logo">
+       <a  href="hindex.html" ><img src="tb.png"></a>
+      </div>
+        <ul>
+            <a class="nav" href="hindex.html"> <li>Home</li></a>
+            <a class="nav" href="forum.html"> <li>Forum</li></a>
+            <a class="nav" href="donate.html"> <li>Donate</li></a>
+            <a class="nav" href="projects.html"> <li>Our Projects</li></a>
+        </ul>
+        <div class="third">
+            <select name="Language" id="Language">
+              <option value="Neplai">Nepali</option>
+              <option value="Bhojpuri">Bhojpuri</option>
+              <option value="Newari">Newari</option>
+              <option value="Urdu">Urdu</option>
+            </select>
+
+              <a  href="login.html"><button class="point">Login</button></a>
+        </div>
+    </div>
+
+    <h1 class="heading">Welcome!</h1>
+    <p>Engage Nepal with Science is an initiative that promotes the integration of science and research in Nepalese communities. The goal is to empower, inspire, and foster confidence in the fields of <b>Science, Technology, Engineering, and Mathematics(STEM).</b></p>
+    <br>
+    <p>This initiative is the brainchild of <b>Alba Abad</b>, a researcher at the <i>Wellcome Centre for Cell Biology.</i> It operates as a collaborative effort between the <i>Research Institute for Bioscience and Biotechnology </i>(RIBB) in Nepal and the Wellcome Centre for Cell Biology at the University of Edinburgh in the United Kingdom.</p>
+    <br>
+    <p>The journey of <u>Engage Nepal with Science</u> began in 2010 when Alba, after completing her PhD, took a career break and traveled to Nepal. The project took shape in 2018 when the team started planning and networking with teachers and researchers remotely.</p>
+    <br>
+    <p>In March 2019, the team had their first face-to-face meeting and kick-started their work. Since then, they have been working tirelessly to engage Nepalese communities with science.</p>
+
+    <div class="carousel-container">
+        <div class="carousel-imgs">
+        <img src="6.jpg" class="carousel-img visible"/>
+        <img src="SERIES.jpeg" class="carousel-img  hidden"/>
+        <img src="scienceimg.jpg" class="carousel-img  hidden"/>
+        </div>
+          <a class="prev arrow">&#10094;</a>
+          <a class="next arrow">&#10095;</a>
+        <div class="slide-numbers">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        
+      </div>
+      <div class="carousel-captions">
+        <p class="carousel-caption visible">Our Team</p>
+        <p class="carousel-caption hidden">Our New Series</p>
+        <p class="carousel-caption hidden">Code the Future</p>
+        </div>
+      
+        <button class="open-button" onclick="openForm()">Chat</button>
+
+        <div class="chat-popup" id="myForm">
+          <form action="messagesent.html" class="form-container">
+            <h1>Chat</h1>
+        
+            <label for="msg"><b>Message</b></label>
+            <textarea placeholder="Type message.." name="msg" required></textarea>
+        
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+        </div>
+
+    <footer>
+        <p class="contact" style="align-items: center;">© 2024 Engage Nepal with Science. All rights reserved.</p>
+    </footer>
+    <script>
+        // Variables
+let prev = document.querySelector('.prev');
+let next = document.querySelector('.next');
+let imgs = document.querySelectorAll('.carousel-img');
+let dots = document.querySelectorAll('.dot');
+let captions = document.querySelectorAll('.carousel-caption')
+let totalImgs = imgs.length;
+let imgPosition = 0;
+
+// Event Listeners
+next.addEventListener('click', nextImg);
+prev.addEventListener('click', prevImg);
+
+// Update Position
+function updatePosition (){
+//   Images
+  for(let img of imgs){
+    img.classList.remove('visible');
+    img.classList.add('hidden');
+  }
+  imgs[imgPosition].classList.remove('hidden');
+  imgs[imgPosition].classList.add('visible')
+//   Dots
+  for (let dot of dots) {
+     dot.className = dot.className.replace(" active", "");
+  }
+    dots[imgPosition].classList.add('active');
+//   Captions
+  for (let caption of captions) {
+      caption.classList.remove('visible');
+      caption.classList.add('hidden');
+  }
+    captions[imgPosition].classList.remove('hidden');
+    captions[imgPosition].classList.add('visible')
+}
+
+// Next Img
+function nextImg(){
+  if (imgPosition === totalImgs -1){
+        imgPosition = 0;
+    } else{
+        imgPosition++;
+    }
+    updatePosition();
+}
+//Previous Image
+function prevImg(){
+  if (imgPosition === 0){
+        imgPosition = totalImgs-1;
+    } else{
+        imgPosition--;
+    }
+    updatePosition();
+}
+
+// Dot Position
+dots.forEach((dot, dotPosition) => {
+  dot.addEventListener("click", () => {
+    imgPosition = dotPosition
+    updatePosition(dotPosition)
+  })
+})
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+    </script>
+    
+</body>
+</html>
+
+

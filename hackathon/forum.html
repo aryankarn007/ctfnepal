@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Engage Nepal with Science</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+     <a  href="hindex.html" ><img src="tb.png"></a>
+    </div>
+      <ul>
+          <a class="nav" href="hindex.html"> <li>Home</li></a>
+          <a class="nav" href="forum.html"> <li>Forum</li></a>
+          <a class="nav" href="donate.html"> <li>Donate</li></a>
+          <a class="nav" href="projects.html"> <li>Our Projects</li></a>
+      </ul>
+      <div class="third">
+          <select name="Language" id="Language">
+            <option value="Neplai">Nepali</option>
+            <option value="Bhojpuri">Bhojpuri</option>
+            <option value="Newari">Newari</option>
+            <option value="Urdu">Urdu</option>
+          </select>
+
+            <a  href="login.html"><button class="point">Login</button></a>
+      </div>
+  </div>
+      </div>
+    <div class="post">
+        <h2>Our First Nepal Science Week and Science Festival:</h2>
+        <p>Posted by: <strong>EPS School Eco-Committee</strong></p>
+        <p>In October 2023, we organized our first Nepal Science week in Chitwan and Nawalparasi, culminating in a Science Festival</p>
+        <img src="earthchallenge.jpg" height="300" width="300">
+        <div class="post-buttons">
+            <button type="button">Like</button>
+            <button type="button">Dislike</button>
+            <button type="button">Share</button>
+            <a href="comment.html"><button type="button">Comment</button></a>
+        </div>
+    </div>
+    <div class="post">
+        <h2>Women in Environment Series I:</h2>
+        <p>Posted by: <strong>Galaxy School Eco-Committee</strong></p>
+        <p>Following the success of our previous series, we have launched the third series of talks with new and exciting speakers</p>
+        <img src="womenincode.jpeg" height="300" width="300">
+        <div class="post-buttons">
+            <button type="button">Like</button>
+            <button type="button">Dislike</button>
+            <button type="button">Share</button>
+            <a href="comment.html"><button type="button">Comment</button></a>
+        </div>
+    </div>
+    <div class="post">
+        <h2>Water Pollution Project</h2>
+        <p>Posted by: <strong>Mount View School Eco-Committee</strong></p>
+        <p>We recently organized a river clean up program to decrease water pollution.</p>
+        <img src="waterpolluttion.jpg" height="300" width="300">
+        <div class="post-buttons">
+            <button type="button">Like</button>
+            <button type="button">Dislike</button>
+            <button type="button">Share</button>
+            <a href="comment.html"><button type="button">Comment</button></a>
+        </div>
+    </div>
+    
+    </div>
+    <button class="open-button" onclick="openForm()">Post</button>
+
+        <div class="chat-popup" id="myForm">
+          <form action="postsuccess.html" class="form-container">
+            <h1>Post</h1>
+        
+            <label for="msg"><b>Message</b></label>
+            <textarea placeholder="Type Post Content.." name="msg" required></textarea>
+        
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+        </div>
+        <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+          }
+          
+          function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+          }
+          </script>
+    
+</body>
+</html>
+
+
+
